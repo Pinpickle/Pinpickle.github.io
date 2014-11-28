@@ -20,6 +20,7 @@ exclude:
   - "gulpfile.js"
   - "package.json"
   - "bower.json"
+  - "node_modules"
 
 assets:
   sources:
