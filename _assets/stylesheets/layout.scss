@@ -1,16 +1,52 @@
 .site-header {
+    $header-height: 50px;
+
     position: fixed;
-    height: 60px;
+    height: $header-height;
     width: 100%;
     top: 0;
     left: 0;
+    font-family: $header-font;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: $header-height;
+
+    a {
+        text-decoration: none;
+        color: #767676;
+    }
 
     .inner {
         height: 100%;
+        position: absolute;
+        top: 0;
+        left: $spacing-unit / 2;
+        right: $spacing-unit / 2;
+        @include device($laptop) {
+            left: $spacing-unit;
+            right: $spacing-unit;
+        }
+    }
+
+    .brand {
+        position: absolute;
+        left: 0;
+    }
+
+    .nav {
+        position: absolute;
+        right: 0;
     }
 }
 
-.site-content {
+body {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #eee 100%);
+    background-attachment: fixed;
 }
 
 .wrapper {

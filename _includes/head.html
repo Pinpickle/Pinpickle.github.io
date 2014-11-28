@@ -6,6 +6,8 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
 
+    <script src="//use.typekit.net/lcc7fhj.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
     {% stylesheet main %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 </head>
