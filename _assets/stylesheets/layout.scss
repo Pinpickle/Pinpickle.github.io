@@ -1,6 +1,6 @@
-.site-header {
-    $header-height: 50px;
+$header-height: 50px;
 
+.site-header {
     position: fixed;
     height: $header-height;
     width: 100%;
@@ -10,6 +10,7 @@
     font-weight: 300;
     font-size: 1.5em;
     line-height: $header-height;
+    letter-spacing: 0.02em;
 
     a {
         text-decoration: none;
@@ -37,6 +38,10 @@
         position: absolute;
         right: 0;
     }
+
+    .page-link {
+        margin-left: $spacing-unit;
+    }
 }
 
 body {
@@ -49,6 +54,10 @@ body {
     background-attachment: fixed;
 }
 
+.page-content {
+    margin-top: $header-height;
+}
+
 .wrapper {
     padding-left: $spacing-unit / 2;
     padding-right: $spacing-unit / 2;
@@ -57,4 +66,82 @@ body {
     @include device($laptop) {
         width: 800px;
     }
+}
+
+.projects {
+    padding-top: 50px;
+
+    @include device($tablet) {
+        padding-top: 150px;
+    }
+    .project {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+
+
+
+        @include device($tablet) {
+            width: 50%;
+            padding-top: 50%;
+        }
+
+        .inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: $spacing-unit;
+            @include device($tablet) {
+                padding: $spacing-unit / 2;
+            }
+
+        }
+
+        .overlay {
+            height: 150%;
+            width: 150%;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: absolute;
+            transition: 0.2s;
+
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) scale(0);
+
+            .title {
+                font-family: $header-font;
+                letter-spacing: 0.4em;
+                text-transform: uppercase;
+                font-weight: 800;
+                color: #fff;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+            }
+        }
+
+        .image {
+            height: 100%;
+            width: 100%;
+            background: #c9c9c9;
+            box-sizing: border-box;
+            border: 0px solid #eee;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        &:hover .overlay {
+            transform: translateY(-50%) translateX(-50%) scale(1)
+        }
+    }
+
 }

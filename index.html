@@ -2,22 +2,23 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<div class="projects">
+    <div class="project-list">
+        {% assign projects = (site.projects | sort: 'date') %}
+        {% for project in projects reversed %}
+            <a href="{{ project.url }}" class="project {{ project.namespace }}">
+                <div class="inner">
+                    {% capture background %}ui/{{ project.namespace }}-button.jpg{% endcapture %}
+                    <div class="image" style="background-image: url({{ background | asset_path }})">
+                        <div class="overlay">
+                            <div class="title">
+                                {{ project.title }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 
 </div>
