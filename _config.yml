@@ -13,6 +13,13 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+defaults:
+  -
+    scope:
+      path: ""
+      collection: "projects"
+    values:
+      layout: "project"
 
 # Build settings
 markdown: kramdown
