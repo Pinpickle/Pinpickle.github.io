@@ -371,10 +371,11 @@ ul, ol, dl, figure,
   width: 100%;
   top: 0;
   left: 0;
-  font-family: "aktiv-grotesk-std", Helvetica, Arial, sans-serif;
+  font-family: "effra", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1.5em;
-  line-height: 50px; }
+  line-height: 50px;
+  letter-spacing: 0.02em; }
   .site-header a {
     text-decoration: none;
     color: #767676; }
@@ -394,6 +395,8 @@ ul, ol, dl, figure,
   .site-header .nav {
     position: absolute;
     right: 0; }
+  .site-header .page-link {
+    margin-left: 30px; }
 
 body {
   width: 100%;
@@ -405,6 +408,9 @@ body {
   background-image: linear-gradient(to bottom, #FFFFFF 0%, #eee 100%);
   background-attachment: fixed; }
 
+.page-content {
+  margin-top: 50px; }
+
 .wrapper {
   padding-left: 15px;
   padding-right: 15px;
@@ -413,6 +419,72 @@ body {
   @media screen and (min-width: 800px) {
     .wrapper {
       width: 800px; } }
+
+.projects {
+  padding-top: 50px; }
+  @media screen and (min-width: 600px) {
+    .projects {
+      padding-top: 150px; } }
+  .projects .project {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    padding-top: 100%;
+    position: relative; }
+    @media screen and (min-width: 600px) {
+      .projects .project {
+        width: 50%;
+        padding-top: 50%; } }
+    .projects .project .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 30px; }
+      @media screen and (min-width: 600px) {
+        .projects .project .inner {
+          padding: 15px; } }
+    .projects .project .overlay {
+      height: 150%;
+      width: 150%;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      position: absolute;
+      -webkit-transition: 0.2s;
+              transition: 0.2s;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateY(-50%) translateX(-50%) scale(0);
+          -ms-transform: translateY(-50%) translateX(-50%) scale(0);
+              transform: translateY(-50%) translateX(-50%) scale(0); }
+      .projects .project .overlay .title {
+        font-family: "effra", Helvetica, Arial, sans-serif;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #fff;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        text-align: center; }
+    .projects .project .image {
+      height: 100%;
+      width: 100%;
+      background: #c9c9c9;
+      box-sizing: border-box;
+      border: 0px solid #eee;
+      background-size: cover;
+      overflow: hidden; }
+    .projects .project:hover .overlay {
+      -webkit-transform: translateY(-50%) translateX(-50%) scale(1);
+          -ms-transform: translateY(-50%) translateX(-50%) scale(1);
+              transform: translateY(-50%) translateX(-50%) scale(1); }
 
 /**
  * Syntax highlighting styles
