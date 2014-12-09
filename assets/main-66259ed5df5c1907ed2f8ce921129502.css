@@ -365,6 +365,14 @@ ul, ol, dl, figure,
 /**
  * Clearfix
  */
+h1, h2, h3 {
+  font-family: "effra", Helvetica, Arial, sans-serif;
+  font-weight: 100; }
+
+.video-big {
+  display: block;
+  width: 100%; }
+
 .site-header {
   position: fixed;
   height: 50px;
@@ -375,7 +383,9 @@ ul, ol, dl, figure,
   font-weight: 300;
   font-size: 1.5em;
   line-height: 50px;
-  letter-spacing: 0.02em; }
+  letter-spacing: 0.02em;
+  background: rgba(254, 254, 254, 0.8);
+  z-index: 10; }
   .site-header a {
     text-decoration: none;
     color: #767676; }
@@ -418,6 +428,7 @@ body {
   margin-right: auto; }
   @media screen and (min-width: 800px) {
     .wrapper {
+      box-sizing: border-box;
       width: 800px; } }
 
 .projects {
