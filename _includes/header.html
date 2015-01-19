@@ -1,8 +1,8 @@
 {% if page.big_header %}
     {% capture header_background %}ui/{{ page.namespace }}-banner.jpg{% endcapture %}
 {% endif %}
-<header class="site-header"{% if header_background %} style="background-image: url({{ header_background | asset_path }})"{% endif %} >
-
+<header class="site-header">
+  <div class="bg-container"{% if header_background %} style="background-image: url({{ header_background | asset_path }})"{% endif %}></div>
   <div class="inner">
 
     <a class="brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
