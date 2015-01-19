@@ -17,9 +17,10 @@ defaults:
   -
     scope:
       path: ""
-      collection: "projects"
+      type: "projects"
     values:
       layout: "project"
+      big_header: true
 
 # Build settings
 markdown: kramdown

@@ -2,12 +2,10 @@
 <html>
 
   {% include head.html %}
-
-  <body>
-
+  <body class="{% if page.big_header %} big-header{% endif %}{% if page.header_light %} light-header{% endif %}">
     {% include header.html %}
     <div class="page-content">
-      <div class="wrapper">
+      <div class="content-wrapper">
         {{ content }}
       </div>
     </div>

@@ -1,0 +1,110 @@
+$header-height: 50px;
+$header-height-big: 500px;
+$header-margin: $punit * 2;
+
+.page-content {
+    margin-top: $header-height + $header-margin;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    height: $header-height;
+    width: 100%;
+
+    font-family: $font-heading;
+    font-weight: 100;
+    font-size: 1.2em;
+    line-height: $header-height;
+    letter-spacing: 0.02em;
+
+    background: #fefefe;
+    background: rgba(254, 254, 254, .8);
+    background-size: cover;
+    background-position: center;
+
+    a {
+        text-decoration: none;
+        color: #767676;
+    }
+
+    .inner {
+        position: absolute;
+        bottom: 0;
+        left: $punit / 2;
+        right: $punit / 2;
+
+        height: $header-height;
+        @include media($medium) {
+            left: $punit;
+            right: $punit;
+        }
+    }
+
+    .brand {
+        position: absolute;
+        left: 0;
+    }
+
+    .nav {
+        position: absolute;
+        right: 0;
+    }
+
+    .page-link {
+        margin-left: $punit;
+    }
+}
+
+.big-header {
+    .site-header {
+        position: absolute;
+
+        height: $header-height-big;
+
+        a {
+            color: #343434;
+        }
+    }
+
+    .page-content {
+        margin-top: $header-height-big + $header-margin;
+    }
+
+    &.light-header {
+        .site-header a {
+            color: #e6e6e6;
+        }
+
+        .title-container h1 {
+            color: #e6e6e6;
+        }
+    }
+
+    .title-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: $header-height-big;
+
+        h1 {
+            position: absolute;
+            left: $punit;
+            right: $punit;
+            top: 50%;
+            z-index: 10;
+
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+
+            transform: translateY(-50%);
+        }
+    }
+}
+

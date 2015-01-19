@@ -1,60 +1,6 @@
-$header-height: 50px;
-
-h1, h2, h3 {
-    font-family: $header-font;
-    font-weight: 100;
-}
-
 .video-big {
     display: block;
     width: 100%;
-}
-
-.site-header {
-    position: fixed;
-    height: $header-height;
-    width: 100%;
-    top: 0;
-    left: 0;
-    font-family: $header-font;
-    font-weight: 300;
-    font-size: 1.5em;
-    line-height: $header-height;
-    letter-spacing: 0.02em;
-
-    background: rgba(254, 254, 254, .8);
-    z-index: 10;
-
-    a {
-        text-decoration: none;
-        color: #767676;
-    }
-
-    .inner {
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: $spacing-unit / 2;
-        right: $spacing-unit / 2;
-        @include device($laptop) {
-            left: $spacing-unit;
-            right: $spacing-unit;
-        }
-    }
-
-    .brand {
-        position: absolute;
-        left: 0;
-    }
-
-    .nav {
-        position: absolute;
-        right: 0;
-    }
-
-    .page-link {
-        margin-left: $spacing-unit;
-    }
 }
 
 body {
@@ -67,25 +13,10 @@ body {
     background-attachment: fixed;
 }
 
-.page-content {
-    margin-top: $header-height;
-}
-
-.wrapper {
-    padding-left: $spacing-unit / 2;
-    padding-right: $spacing-unit / 2;
-    margin-left: auto;
-    margin-right: auto;
-    @include device($laptop) {
-        box-sizing: border-box;
-        width: 800px;
-    }
-}
-
 .projects {
     padding-top: 50px;
 
-    @include device($tablet) {
+    @include media($small) {
         padding-top: 150px;
     }
     .project {
@@ -95,9 +26,7 @@ body {
         padding-top: 100%;
         position: relative;
 
-
-
-        @include device($tablet) {
+        @include media($small) {
             width: 50%;
             padding-top: 50%;
         }
@@ -109,9 +38,9 @@ body {
             height: 100%;
             width: 100%;
             box-sizing: border-box;
-            padding: $spacing-unit;
-            @include device($tablet) {
-                padding: $spacing-unit / 2;
+            padding: $punit;
+            @include media($small) {
+                padding: $punit / 2;
             }
 
         }
@@ -131,7 +60,7 @@ body {
             transform: translateY(-50%) translateX(-50%) scale(0);
 
             .title {
-                font-family: $header-font;
+                font-family: $font-heading;
                 letter-spacing: 0.4em;
                 text-transform: uppercase;
                 font-weight: 800;
