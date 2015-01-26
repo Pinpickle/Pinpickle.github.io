@@ -34,6 +34,9 @@ exclude:
   - "bower.json"
   - "node_modules"
 
+gems:
+    - jekyll-sitemap
+
 assets:
   sources:
     - _assets/images
